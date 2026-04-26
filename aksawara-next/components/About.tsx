@@ -190,7 +190,7 @@ export default function About() {
                 name: "Restu Adam Wiguna",
                 role: "Project Manager",
                 expertise: "Agile Certified",
-                img: "/img/team/pm.jpg",
+                img: "/img/team/restu.jpeg",
               },
             ].map((member, idx) => (
               <motion.div
