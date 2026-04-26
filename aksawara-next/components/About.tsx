@@ -74,11 +74,20 @@ export default function About() {
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
             className="relative h-80 md:h-auto overflow-hidden">
+            {/* DARK MODE LOGO */}
             <Image
               src="/img/logo-dark.png"
               alt="Aksawara Digital Team"
               fill
-              className="object-cover"
+              className="object-cover hidden dark:block"
+            />
+
+            {/* LIGHT MODE LOGO */}
+            <Image
+              src="/img/logo-light.png"
+              alt="Aksawara Digital Team"
+              fill
+              className="object-cover block dark:hidden"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/50 via-transparent to-transparent" />
           </motion.div>
