@@ -169,9 +169,9 @@ export default function About() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                name: "Mochamad Rifqy Careliansyah",
+                name: "Mochamad Rifqy Carreliansyah",
                 role: "Founder & CEO",
-                expertise: "10+ tahun pengalaman",
+                expertise: "4+ tahun pengalaman",
                 img: "/img/team/rifqy.jpeg",
               },
               {
