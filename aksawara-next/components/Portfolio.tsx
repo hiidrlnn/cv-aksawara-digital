@@ -41,16 +41,17 @@ const defaultProjects = [
 
 export default function Portfolio() {
   // Gunakan portfolioData jika ada, fallback ke defaultProjects
-  const displayProjects = portfolioData && portfolioData.length > 0 
-    ? portfolioData.slice(0, 6).map(project => ({
-        title: project.title,
-        image: project.thumbnail,
-        link: `/portfolio/${project.slug}`,
-        slug: project.slug,
-        category: project.category,
-        year: project.year,
-      }))
-    : defaultProjects;
+  const displayProjects =
+    portfolioData && portfolioData.length > 0
+      ? portfolioData.slice(0, 6).map((project) => ({
+          title: project.title,
+          image: project.thumbnail,
+          link: `/portfolio/${project.slug}`,
+          slug: project.slug,
+          category: project.category,
+          year: project.year,
+        }))
+      : defaultProjects;
 
   return (
     <section
@@ -68,19 +69,19 @@ export default function Portfolio() {
           Portfolio Kami
         </motion.h2>
 
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, width: 0 }}
           whileInView={{ opacity: 1, width: 64 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="w-16 h-1 bg-blue-500 mx-auto mt-3 rounded-full">
-        </motion.div>
+          className="w-16 h-1 bg-blue-500 mx-auto mt-3 rounded-full"></motion.div>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
           className="text-center text-gray-600 dark:text-gray-400 mt-4 max-w-2xl mx-auto">
-          Beberapa proyek unggulan yang telah kami selesaikan dengan penuh dedikasi
+          Beberapa proyek unggulan yang telah kami selesaikan dengan penuh
+          dedikasi
         </motion.p>
 
         {/* GRID */}
@@ -92,12 +93,11 @@ export default function Portfolio() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.5 }}
               className="group relative overflow-hidden rounded-xl border border-gray-200 dark:border-white/10 bg-white dark:bg-gray-800/50">
-              
               {/* LINK - menggunakan Link dari Next.js untuk navigasi */}
               <Link href={item.link} className="block">
                 {/* IMAGE CONTAINER */}
                 <div className="relative w-full h-56 overflow-hidden bg-gray-200 dark:bg-gray-700">
-                  {item.image && item.image.startsWith('/') ? (
+                  {item.image && item.image.startsWith("/") ? (
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -107,7 +107,7 @@ export default function Portfolio() {
                       onError={(e) => {
                         // Fallback jika gambar tidak ditemukan
                         const target = e.target as HTMLImageElement;
-                        target.style.display = 'none';
+                        target.style.display = "none";
                       }}
                     />
                   ) : (
@@ -119,7 +119,7 @@ export default function Portfolio() {
                       onError={(e) => {
                         // Fallback jika gambar tidak ditemukan
                         const target = e.target as HTMLImageElement;
-                        target.src = '/img/placeholder.jpg';
+                        target.src = "/img/placeholder.jpg";
                       }}
                     />
                   )}
@@ -137,13 +137,24 @@ export default function Portfolio() {
                       {item.title}
                     </h3>
                     {/* Perbaikan: cek properti category dengan aman */}
-                    {'category' in item && item.category && (
-                      <p className="text-gray-300 text-sm mb-2">{item.category}</p>
+                    {"category" in item && item.category && (
+                      <p className="text-gray-300 text-sm mb-2">
+                        {item.category}
+                      </p>
                     )}
                     <span className="text-blue-400 text-sm inline-flex items-center gap-1">
-                      Lihat Detail 
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      Lihat Detail
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9 5l7 7-7 7"
+                        />
                       </svg>
                     </span>
                   </div>
@@ -157,18 +168,26 @@ export default function Portfolio() {
         </div>
 
         {/* TOMBOL LIHAT SEMUA */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-center mt-12">
           <Link
             href="/portfolio"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:scale-105"
-          >
+            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 hover:scale-105">
             Lihat Semua Portofolio
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
             </svg>
           </Link>
         </motion.div>
