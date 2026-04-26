@@ -90,7 +90,7 @@ export default function Contact() {
             <div className="flex flex-wrap gap-5">
               {/* Instagram - Gradien Pink/Orange */}
               <motion.a
-                href={socialLinks.instagram}
+                href="https://www.instagram.com/aksawaradigitalofficial/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -3 }}
@@ -134,7 +134,7 @@ export default function Contact() {
 
               {/* TikTok - Hitam */}
               <motion.a
-                href={socialLinks.tiktok}
+                href="https://www.tiktok.com/@aksawaradigitalofficial"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.2, y: -3 }}
