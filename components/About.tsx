@@ -191,7 +191,7 @@ export default function About() {
               },
               {
                 name: "Mohamad Sudirlan",
-                role: "Lead Developer",
+                role: "CTO & Lead Developer",
                 expertise: "Fullstack Expert",
                 img: "/img/team/dirlan.jpeg",
               },
